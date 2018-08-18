@@ -1,4 +1,4 @@
-# daveyb's Ansible Playbook
+# Ansible Playbook for Personal Dev Box Config
 
 This is my personal (and always a WIP, beware the monsters) Ansible playbook for setting up and enforcing a consistent config on my computers.
 
