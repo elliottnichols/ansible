@@ -6,7 +6,7 @@
   - name: Group all hosts by os
     group_by: key={{ ansible_os_family }}
   tags:
-  - always
+    - always
 
 - name: Bootstrap
   hosts: all
@@ -18,7 +18,7 @@
 - name: Install and configure git
   hosts: all
   roles:
-  - git
+   - git
   tags:
   - git
 
@@ -64,12 +64,12 @@
   tags:
     - docker
 
-- name: Install dropbox
-  hosts: all
-  roles:
-  - dropbox
-  tags:
-  - dropbox
+  # - name: Install dropbox
+  # hosts: all
+  # roles:
+  #- dropbox
+  #tags:
+  #- dropbox
 
 - name: Install slack
   hosts: all
@@ -78,12 +78,12 @@
   tags:
     - slack
 
-- name: Prepare for music
-  hosts: all
-  roles:
-    - audio
-  tags:
-    - audio
+#- name: Prepare for music
+#  hosts: all
+#  roles:
+#    - audio
+#  tags:
+#    - audio
 
 #- name: Prepare to read
 #  hosts: all
@@ -92,6 +92,13 @@
 #  tags:
 #    - read
 #  become: true
+
+- name: Install vscode
+  hosts: all
+  roles:
+    - vscode
+  tags:
+    - vscode
 
 - name: Install misc packages
   hosts: all

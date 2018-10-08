@@ -4,15 +4,20 @@
     name: the_silver_searcher
     state: latest
 
+- name: install jq
+  homebrew:
+    name: jq
+    state: latest
+
 - name: install royal-tsx
-  shell: brew cask install royal-tsx
+  homebrew_cask:
+    name: royal-tsx
+    state: present
 
 - name: install slack
-  shell: brew cask install slack
-  ignore_errors: yes # preinstalled version causing error
-
-- name: install teams
-  shell: brew cask install microsoft-teams
+  homebrew_cask:
+    name: slack
+    state: present
 
 - name: install sshuttle
   homebrew:

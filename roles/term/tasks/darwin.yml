@@ -1,8 +1,11 @@
 ---
 - name: install iterm2
-  shell: brew cask install iterm2
+  homebrew_cask:
+    name: iterm2
+    state: present
 
 - name: install zsh syntax highlighting
   homebrew:
     name: zsh-syntax-highlighting
     state: latest
+

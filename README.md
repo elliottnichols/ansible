@@ -1,4 +1,6 @@
-# daveyb's Ansible Playbook
+# Elliott's Ansible Playbook
+
+** Fork from daveyb's Ansible Playbook
 
 This is my personal (and always a WIP, beware the monsters) Ansible playbook for setting up and enforcing a consistent config on my computers.
 
@@ -14,12 +16,8 @@ It's designed to init new dotfiles as needed, so be aware that it may clobber ex
 3. Ansible `sudo pip install ansible`
 4. An internet connection
 
-### Clone
-`git clone https://github.com/daveyb/ansible.git ~/ansible && cd ~/ansible`
-
 ### Run all plays
 `ansible-playbook -i hosts main.yml --ask-become-pass`
 
 ### Run a specific play based on tag (optional)
 `ansible-playbook -i hosts main.yml --ask-become-pass -t zsh`
-
