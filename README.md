@@ -1,4 +1,4 @@
-# Elliott's Ansible Playbook
+# Ansible Playbook for Personal Dev Box Config
 
 ** Fork from daveyb's Ansible Playbook
 
