@@ -3,4 +3,4 @@
   package:
     name: chromium
     state: latest
-  become: true
+  become: yes

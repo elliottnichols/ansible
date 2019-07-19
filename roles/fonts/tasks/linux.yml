@@ -3,7 +3,7 @@
   package:
     name: fontconfig
     state: latest
-  become: true
+  become: yes
 
 - name: Install powerline fonts
   shell: ". {{ working_dir }}/powerline-fonts/install.sh"

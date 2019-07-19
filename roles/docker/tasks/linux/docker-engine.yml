@@ -9,7 +9,7 @@
     user: name={{ ansible_user_id }}
           groups=docker
           append=yes
-  become: true
+  become: yes
 
 - debug:
       msg: "Logoff/Logon required for {{ ansible_user_id }} before group changes will take effect"

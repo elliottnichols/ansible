@@ -2,15 +2,16 @@
 export PATH=$PATH:$HOME/bin:/usr/local/bin:/usr/bin:/usr/sbin:/usr/local/MacGPG2/bin:/usr/local/opt/go/libexec/bin
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/kon1513/.oh-my-zsh"
+export ZSH="/Users/{ user }/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="powerlevel9k/powerlevel9k"
 POWERLEVEL9K_MODE='nerdfont-complete'
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(time root_indicator background_jobs dir rbenv vcs status)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
+# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs time)
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 
 # Set list of themes to load
@@ -67,13 +68,17 @@ POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  docker
+  docker-compose
+  gpg-agent
+  go
+  history
+  kubectl
   terraform
+  screen
   vault
   vscode
-  docker
-  dotenv
-  go
-  pyenv
+  zsh-peco-history
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,6 +111,21 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ll='ls -lha'
+alias c="clear"
+alias k="kubectl"
+alias rsterm='source ~/.zshrc'
+alias copy='pbcopy'
+alias paste='pbpaste'
+alias ports="lsof -nP | grep LISTEN"
+alias ns='kubens'
+alias tf='terraform'
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# Terminal Colors
+export LSCOLORS="ExfxcxdxBxegedabagacad"
 
 # Kroger proxy: use local Spike proxy (https://confluence.kroger.com/confluence/display/DCI/DCP+Mac+Setup#DCPMacSetup-ShellProxySettings)
 export http_proxy="http://127.0.0.1:3128/"

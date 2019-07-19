@@ -14,5 +14,5 @@
 - name: install slack
   apt: deb="{{ working_dir }}/{{ slack_package_name }}"
   when: slack_install_check.rc == 1
-  become: true
+  become: yes
 

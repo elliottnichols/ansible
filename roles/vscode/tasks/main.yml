@@ -3,3 +3,19 @@
   homebrew_cask:
     name: visual-studio-code
     state: present
+
+- name: template vscode settings.json
+  template:
+    src: "templates/settings.json.j2"
+    dest: ~/Library/Application Support/Code/User/settings.json
+    force: true
+
+- name: register vscode extensions
+  command: /usr/local/bin/code --list-extensions
+  register: installed_extensions
+  changed_when: false
+
+- name: Install vscode extensions
+  command: /usr/local/bin/code --install-extension {{ item }}
+  loop: "{{ extensions }}"
+  when: item not in installed_extensions.stdout_lines

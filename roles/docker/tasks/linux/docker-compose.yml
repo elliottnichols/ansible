@@ -12,7 +12,7 @@
     url: "{{ docker_compose_download_url.stdout }}"
     dest: /usr/local/bin/docker-compose
     mode: 0755
-  become: true
+  become: yes
 
 - name: Create zsh autocomplete folder
   file:  

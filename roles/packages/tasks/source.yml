@@ -10,4 +10,4 @@
     line: "{{ package_source }}"
   when: (ansible_os_family == "Debian") or
         (ansible_os_family == "Ubuntu")
-  become: true
+  become: yes

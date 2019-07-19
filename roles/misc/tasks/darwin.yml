@@ -28,3 +28,9 @@
   homebrew:
       name: kubectx
       state: latest
+
+# https://github.com/derailed/k9s
+- name: install k9s
+  homebrew:
+      name: derailed/k9s/k9s
+      state: latest

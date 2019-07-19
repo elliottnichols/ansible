@@ -3,4 +3,4 @@
   package:
     name: vim
     state: latest
-  become: true
+  become: yes

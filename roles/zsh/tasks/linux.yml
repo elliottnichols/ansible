@@ -3,5 +3,5 @@
   package:
     name: zsh
     state: latest
-  become: true
+  become: yes
 

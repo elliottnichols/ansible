@@ -39,11 +39,11 @@
 
 - name: Change shell to zsh
   shell: chsh -s /bin/zsh
-  become: true
+  become: yes
 
 - name: Install powerline
   shell: pip install powerline-status
-  become: true
+  become: yes
 
 - name: reload zshrc
   shell: "source ~/.zshrc"

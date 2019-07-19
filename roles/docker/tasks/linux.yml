@@ -7,7 +7,7 @@
     - apt-transport-https
     - ca-certificates
     - software-properties-common
-  become: true
+  become: yes
 
 - name: enable docker in package repository
   include_role:

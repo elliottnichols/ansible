@@ -4,7 +4,7 @@
     name: dconf-cli
     state: latest
   when: ansible_os_family == "Debian"
-  become: true
+  become: yes
 
 - name: Clone terminal colorize script to working directory
   git:

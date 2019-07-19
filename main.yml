@@ -1,26 +1,26 @@
 ---
 - hosts: all
   tasks:
-  - debug:
-      msg: vars
-  - name: Group all hosts by os
-    group_by: key={{ ansible_os_family }}
+    - debug:
+        msg: vars
+    - name: Group all hosts by os
+      group_by: key={{ ansible_os_family }}
   tags:
     - always
 
 - name: Bootstrap
   hosts: all
   roles:
-  - bootstrap
+    - bootstrap
   tags:
-  - bootstrap
+    - bootstrap
 
 - name: Install and configure git
   hosts: all
   roles:
-   - git
+    - git
   tags:
-  - git
+    - git
 
 - name: Install fonts
   hosts: all
@@ -32,23 +32,24 @@
 - name: Configure shell
   hosts: all
   roles:
-  - zsh
+    - zsh
   tags:
-  - shell
+    - shell
 
-- name: Configure terminal
-  hosts: all
-  roles:
-  - term
-  tags:
-  - term
+# Needs review
+# - name: Configure terminal
+#   hosts: all
+#   roles:
+#     - term
+#   tags:
+#     - term
 
 - name: Install and configure vim
   hosts: all
   roles:
-  - vim
+    - vim
   tags:
-  - vim
+    - vim
 
 - name: Install chrome
   hosts: all
@@ -64,34 +65,12 @@
   tags:
     - docker
 
-  # - name: Install dropbox
-  # hosts: all
-  # roles:
-  #- dropbox
-  #tags:
-  #- dropbox
-
 - name: Install slack
   hosts: all
   roles:
     - slack
   tags:
     - slack
-
-#- name: Prepare for music
-#  hosts: all
-#  roles:
-#    - audio
-#  tags:
-#    - audio
-
-#- name: Prepare to read
-#  hosts: all
-#  roles:
-#     - read
-#  tags:
-#    - read
-#  become: true
 
 - name: Install vscode
   hosts: all

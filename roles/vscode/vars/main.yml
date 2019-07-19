@@ -1,0 +1,19 @@
+---
+extensions:
+  - aaron-bond.better-comments
+  - dhoeric.ansible-vault
+  - eamodio.gitlens
+  - gerane.Theme-FlatlandMonokai
+  - mauve.terraform
+  - mitchdenny.ecdc
+  - ms-azuretools.vscode-azureterraform
+  - ms-azuretools.vscode-docker
+  - ms-kubernetes-tools.vscode-kubernetes-tools
+  - ms-vscode.azure-account
+  - ms-vscode.Go
+  - nextfaze.json-parse-stringify
+  - owenfarrell.vscode-vault
+  - redhat.vscode-yaml
+  - Summer.azure-event-hub-explorer
+  - vscoss.vscode-ansible
+  - wholroyd.HCL
