@@ -1,0 +1,48 @@
+---
+- name: install zsh
+  homebrew:
+    name: zsh
+    state: latest
+
+- name: Change shell to zsh
+  shell: chsh -s /bin/zsh
+  become: yes
+
+- name: Clone oh-my-zsh
+  git:
+    repo: "{{ omz_repo }}"
+    dest: "{{ local_omz_repo }}"
+    force: yes
+
+- name: Copy example zshrc
+  shell: "cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc"
+
+- name: add bin search paths to PATH
+  lineinfile:
+    dest: "~/.zshrc"
+    insertafter: BOF 
+    line: 'export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin'
+    state: present
+
+- name: Set zsh theme
+  lineinfile:
+    dest: "~/.zshrc"
+    regexp: '^ZSH_THEME='
+    line: "ZSH_THEME={{ zsh_theme }}"
+
+- name: Set DEFAULT_USER
+  lineinfile:
+    dest: "~/.zshrc"
+    line: "DEFAULT_USER=$USER"
+
+- name: Install powerline
+  shell: /usr/local/bin/pip3 install powerline-status
+  become: yes
+
+- name: reload zshrc
+  shell: "source ~/.zshrc"
+  args:
+    executable: /usr/local/bin/zsh
+
+- name: reload shell
+  shell: exec $SHELL

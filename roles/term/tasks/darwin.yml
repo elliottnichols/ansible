@@ -9,3 +9,33 @@
     name: zsh-syntax-highlighting
     state: latest
 
+- name: install peco
+  homebrew:
+    name: peco
+    state: latest
+
+- name: Clone zsh-peco-history into oh-my-zsh plugins directory
+  git:
+    repo: "{{ zsh_peco_history_repo }}"
+    dest: "{{ omz_custom_dir }}/plugins/zsh-peco-history"
+    force: yes
+
+- name: Clone powerlevel9k into oh-my-zsh themes directory
+  git:
+    repo: "{{ powerlevel9k_repo }}"
+    dest: "{{ omz_custom_dir }}/themes/powerlevel9k"
+    force: yes
+
+- name: Clone personal dotfiles
+  git:
+    repo: "{{ dotfiles_repo }}"
+    dest: "{{ playbook_dir }}/../dotfiles"
+    force: yes
+
+- name: chmod dotfiles script +x
+  file:
+    path: "{{ playbook_dir }}/../dotfiles/dotfiles.sh"
+    mode: '0744'
+
+- name: execute dotfiles script
+  shell: "{{ playbook_dir }}/../dotfiles/dotfiles.sh"

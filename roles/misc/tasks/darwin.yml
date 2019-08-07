@@ -34,3 +34,17 @@
   homebrew:
       name: derailed/k9s/k9s
       state: latest
+
+- name: install helm
+  homebrew:
+    name: kubernetes-helm
+    state: latest
+
+- name: install direnv
+  homebrew:
+    name: direnv
+    state: present
+
+- name: pin OSX dock to left edge
+  shell: defaults write com.apple.dock orientation left
+  notify: restart dock

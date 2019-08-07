@@ -32,17 +32,16 @@
 - name: Configure shell
   hosts: all
   roles:
-    - zsh
+    - shell
   tags:
     - shell
 
-# Needs review
-# - name: Configure terminal
-#   hosts: all
-#   roles:
-#     - term
-#   tags:
-#     - term
+- name: Configure terminal
+  hosts: all
+  roles:
+    - term
+  tags:
+    - term
 
 - name: Install and configure vim
   hosts: all

@@ -4,6 +4,11 @@
     name: visual-studio-code
     state: present
 
+- name: Create dependent directory
+  file:
+    path: ~/Library/Application Support/Code/User
+    state: directory
+
 - name: template vscode settings.json
   template:
     src: "templates/settings.json.j2"
