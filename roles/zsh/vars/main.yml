@@ -1,4 +1,0 @@
----
-omz_repo: 'https://github.com/robbyrussell/oh-my-zsh.git'
-local_omz_repo: "~/.oh-my-zsh"
-zsh_theme: 'agnoster'
