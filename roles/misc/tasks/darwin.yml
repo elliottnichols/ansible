@@ -29,6 +29,11 @@
       name: kubectx
       state: latest
 
+- name: install Azure CLI
+  homebrew:
+    name: azure-cli
+    state: latest
+
 # https://github.com/derailed/k9s
 - name: install k9s
   homebrew:

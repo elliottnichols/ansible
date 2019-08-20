@@ -64,7 +64,7 @@
   tags:
     - docker
 
-- name: Install slack
+- name: Install slack on Linux
   hosts: all
   roles:
     - slack
