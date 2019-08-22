@@ -1,33 +1,38 @@
 ---
 - name: install ag
   homebrew:
-      name: the_silver_searcher
-      state: latest
+    name: the_silver_searcher
+    state: latest
 
 - name: install jq
   homebrew:
-      name: jq
-      state: latest
+    name: jq
+    state: latest
+
+- name: install hping
+  homebrew:
+    name: hping
+    state: latest
 
 - name: install royal-tsx
   homebrew_cask:
-      name: royal-tsx
-      state: present
+    name: royal-tsx
+    state: present
 
 - name: install slack
   homebrew_cask:
-      name: slack
-      state: present
+    name: slack
+    state: present
 
 - name: install sshuttle
   homebrew:
-      name: sshuttle
-      state: latest
+    name: sshuttle
+    state: latest
 
 - name: install kubectx and kubens
   homebrew:
-      name: kubectx
-      state: latest
+    name: kubectx
+    state: latest
 
 - name: install Azure CLI
   homebrew:
@@ -37,8 +42,8 @@
 # https://github.com/derailed/k9s
 - name: install k9s
   homebrew:
-      name: derailed/k9s/k9s
-      state: latest
+    name: derailed/k9s/k9s
+    state: latest
 
 - name: install helm
   homebrew:
