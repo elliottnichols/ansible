@@ -1,5 +1,6 @@
 ---
-zsh_peco_history_repo: 'https://github.com/jimeh/zsh-peco-history.git'
+zsh_peco_history_repo: "https://github.com/jimeh/zsh-peco-history.git"
+zsh_autosuggestions: "https://github.com/zsh-users/zsh-autosuggestions"
 powerlevel9k_repo: "https://github.com/bhilburn/powerlevel9k.git"
 dotfiles_repo: "git@github.com:elliottnichols/dotfiles.git"
 omz_custom_dir: "~/.oh-my-zsh/custom"
