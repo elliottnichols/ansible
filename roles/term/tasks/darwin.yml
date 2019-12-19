@@ -22,8 +22,14 @@
 
 - name: Clone zsh-autosuggestions into oh-my-zsh plugins directory
   git:
-    repo: "{{ zsh_autosuggestions }}"
-    dest: "{{ omz_custom_dir }}/plugins/zsh-peco-history"
+    repo: "{{ zsh_autosuggestions_repo }}"
+    dest: "{{ omz_custom_dir }}/plugins/zsh-autosuggestions"
+    force: yes
+
+- name: Clone zsh-syntax-highlighting into oh-my-zsh plugins directory
+  git:
+    repo: "{{ zsh_syntax_highlighting_repo }}"
+    dest: "{{ omz_custom_dir }}/plugins/zsh-syntax-highlighting"
     force: yes
 
 - name: Clone powerlevel9k into oh-my-zsh themes directory
