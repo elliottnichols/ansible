@@ -20,6 +20,12 @@
     dest: "{{ omz_custom_dir }}/plugins/zsh-peco-history"
     force: yes
 
+- name: Clone zsh-autosuggestions into oh-my-zsh plugins directory
+  git:
+    repo: "{{ zsh_autosuggestions }}"
+    dest: "{{ omz_custom_dir }}/plugins/zsh-peco-history"
+    force: yes
+
 - name: Clone powerlevel9k into oh-my-zsh themes directory
   git:
     repo: "{{ powerlevel9k_repo }}"
@@ -35,7 +41,7 @@
 - name: chmod dotfiles script +x
   file:
     path: "{{ playbook_dir }}/../dotfiles/dotfiles.sh"
-    mode: '0744'
+    mode: "0744"
 
 - name: execute dotfiles script
   shell: "{{ playbook_dir }}/../dotfiles/dotfiles.sh"
